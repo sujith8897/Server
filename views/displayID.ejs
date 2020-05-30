@@ -1,73 +1,133 @@
 <%- include('partials/header');-%>
 
 <style type="text/css">
-.container-id-card{
-    width: 300px;
-    height: 500px;
-    background-color: bisque;
-    display: flex;
-    flex-flow: column wrap;
-   
-    align-items: center;
-    border-radius: 10px;
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-.id-card-pic{
-    margin-top: 50px;
-    width: 150px;
-    height: 150px;
-    background-color: aqua;
-    border-radius: 50%;
-   
-}
-.id-card-content{
-    margin-top: 50px;
-    height: 200px;
-    width: 150px;
-   
-    flex-flow: column wrap;
-    border-radius: 10px;
-    background-color: hotpink;
-    border-radius: 10px;
- 
+body{
+  background: #b696d7;
 }
 
-.id-card-name, .id-card-roll, .id-card-hostel{
-    width: 80%;
-    height: 20%;
-    margin-right: 100px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: brown;
-    display: block;
-    border-radius: 10px;
-} 
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #d0bbe5;
+  padding: 35px 15px 15px;
+  border-radius: 5px;
+}
+
+.wrapper:before{
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 13px;
+  background: #b696d7;
+  border-radius: 50px;
+}
+
+.wrapper:after{
+  content: "";
+  position: absolute;
+  top: -181px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 200px;
+  background: #353535;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.125);
+}
+
+.card{
+  width: 200px;
+  height: 320px;
+  background: #fff;
+  padding: 20px 20px 0;
+  position: relative;
+  border-radius: 5px;
+}
+
+.card img{
+  width: 100%;
+  margin-bottom: 80px;
+  border:1px solid #DAD0CF ;
+}
+
+.card:before{
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 30%;
+  height: 225px;
+  opacity: 0.8;
+}
+
+.card:after{
+
+  position: absolute;
+  top: 125px;
+  left: -50px;
+  transform: rotate(-90deg);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.card .info{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  padding: 20px;
+  background: #353535;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.card p{
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+}
 </style>
     
 
 
+  <section id="content-wrapper" style="padding-top:250px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="content-title" style="text-align:center;">Search ID Card</h2>
 
-<body>
-    <div class="container-id-card">
-    <div class="id-card-pic">
-        <% var name= id[0].roll+".jpg"  %>
-       <img src=<%= name %> style="width:100%; height:100%; border-radius:50%" />
-    </div>
-    <div class="id-card-content">
-        <div class="id-card-name">
-        <%=id[0].name%>
-        </div><br>
-        <div class="id-card-roll">
-        <%=id[0].roll%>
-        </div><br>
-        <div class="id-card-hostel">
-        <%=id[0].blockName +"-"+ id[0].roomNo%>
-        
+                <div class="wrapper">
+                  <div class="card">
+                    <% var name= id[0].roll+".jpg"  %>
+                    <img src=<%= name %> alt=<%= name%>>
+                    <div class="info">
+                      <p>Name-<%=id[0].name%></p>
+                      <p>Roll-<%=id[0].roll%></p>
+                      <p><%=id[0].blockName +"-"+ id[0].roomNo%></p>
+                    </div>
+                  </div>
+                </div>
+            
         </div>
-    </div>
-    
-    
-    
-    </div>
-</body>
+      </div>
+  </section>
+
+
 <%- include('partials/footer');-%>

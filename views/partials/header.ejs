@@ -292,6 +292,7 @@ tr:nth-child(even) {
 }
 
 
+
 label {
   display: block;
 }
@@ -302,6 +303,7 @@ input {
   padding: 3px 5px;
   box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
   width: 190px;
+
 }
 
 input[type=checkbox] + label {
@@ -360,7 +362,7 @@ input[type=checkbox]:checked + label:before {
   </form>
 </li> -->
       <li>
-        <form action="/students" method="POST">
+        <form action="/students" method="POST" autocomplete="off">
 <!--           <select name="searchBy" style="width: 75%;" class="form-control">
             <option value="name">Name</option>
             <option value="rollNo">Roll No.</option>
@@ -375,7 +377,7 @@ input[type=checkbox]:checked + label:before {
         <a href="/dashboard"><i class="fa fa-tachometer"></i>Dashboard</a>
       </li>
 
-
+      
       <li class="btns">
         <a href="/hostels"><i class="fa fa-university"></i>Hostels</a>
       </li>

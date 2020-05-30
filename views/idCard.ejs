@@ -1,18 +1,19 @@
+
 <%- include('partials/header');-%>
-<style type="text/css">
-/* body{
-    background-color: red;
-} */
 
-</style>
+  <section id="content-wrapper">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="content-title" style="text-align:center;">Search ID Card</h2>
 
-<body>
- <form method="POST" action="/id-card" >
-    <p>Enter your roll num</p><br>
-<input type="text" name="roll" placeholder="Roll num" />
-<input type="submit" />
-</form>
-</body>
-
+			 <form method="POST" action="/id-card" autocomplete="off">
+			    <h5><label for="Name">Enter your Roll No</label></h5>
+			<input type="text" name="roll" placeholder="Roll num" /><br><br>
+			<button class="btn btn-warning">Search</button>
+			</form>
+			
+        </div>
+      </div>
+  </section>
 
 <%- include('partials/footer');-%>

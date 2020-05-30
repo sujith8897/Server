@@ -173,7 +173,7 @@ app.get("/attdrange/:date",function(req,res){
 app.post("/addattd",function(req,res){
 
 	var present=[];
-	Hostel.find({}).sort({"roll": 'ascending'}).exec(function(err, data){
+	Hostel.find({}).sort({roll: 'ascending'}).exec(function(err, data){
 
 		if(err){
 			console.log(err);
