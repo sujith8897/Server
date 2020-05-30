@@ -1,0 +1,42 @@
+
+<%- include('partials/header');-%>
+
+  <section id="content-wrapper" class="container">
+      <div class="row" >
+          <div class="col">
+            <%  if(show){ %>
+                <h3 style="text-align:center;">Attendance for given range</h3>
+
+                <% if(data.length>0){ %>
+                <ul>
+                <% for(var i=0;i<data.length;i++){ %>
+                    <li>
+                      <a href="/attdrange/<%= data[i].date %>"><%= data[i].date  %></a>
+                    </li>
+                <%   }  %>
+                </ul>
+                <% } else {%>
+                    <h3>No dates to display</h3>
+                    <a href="/attd"><button class="btn btn-warning">Back</button></a>
+                <%}%>
+
+            <% } else {%>
+
+                <h3 style="text-align:center;">Attendance</h3>
+                <h4>Select range</h4>
+
+                <form action="/attd" method="POST">
+                  <label>From</label>
+                  <input type="date" name="start" required="on"></input>
+                   <label>To</label>
+                  <input type="date" name="end" required="on"></input>
+                  <br><br>
+                  <button class="btn btn-warning">Search</button>
+                </form>
+
+            <%  } %>
+          </div>
+      </div>
+  </section>
+
+<%- include('partials/footer');-%>

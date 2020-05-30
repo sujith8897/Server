@@ -1,0 +1,23 @@
+
+<%- include('partials/header');-%>
+
+  <section id="content-wrapper" class="container">
+      <div class="row" >
+          <div class="col">
+
+          <% if(success){ %>
+          <h1 style="color:green;">Successfull</h1>
+          <h4><%= msg %></h4>
+          <% } else{ %>
+          <h1 style="color:red;">Failed</h1>
+          <h4><%= msg %></h4>
+          <% }%>
+
+          
+          <a href="/dashboard"><button class="btn btn-warning">Home</button></a>
+
+          </div>
+      </div>
+  </section>
+
+<%- include('partials/footer');-%>

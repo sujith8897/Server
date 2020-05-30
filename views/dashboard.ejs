@@ -1,0 +1,27 @@
+
+<%- include('partials/header');-%>
+
+  <section id="content-wrapper" class="container">
+          
+        <h3 style="text-align:center;">Dashboard</h3>
+        
+      <div class="row" >
+
+        <div class=" col-lg-3 col-md-3 col-sm-6  ca" style="background-color:#f56642;">
+         <h5 style="float:left;"><i class="fa fa-mortar-board"  style="font-size:36px"></i><span style="color:white;">Students</span></h5>
+         <h1 style="float:right;color:white;" class="num"><%=  students  %></h1>
+        </div>
+
+        <div class=" col-lg-3 col-md-3 col-sm-6  ca" style="background-color:#3e87ed;">
+         <h5 style="float:left;"><i class="fa fa-calendar-check-o"  style="font-size:36px"></i><span style="color:white;">Attendance</span></h5>
+         <h1 style="float:right;color:white;" class="num"><%=  present  %></h1>
+        </div>
+        
+        <div class=" col-lg-3 col-md-3 col-sm-6  ca" style="background-color:#ed3ee4;">
+         <h5 style="float:left;"><i class="fa fa-battery-3"  style="font-size:30px"></i><span style="color:white;">Seats Left</span></h5>
+         <h1 style="float:right;color:white;" class="num"><%=  375-students  %></h1>
+      	</div>
+      </div>
+  </section>
+
+<%- include('partials/footer');-%>

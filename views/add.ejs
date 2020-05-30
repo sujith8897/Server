@@ -1,0 +1,43 @@
+<%- include('partials/header');-%>
+
+  <section id="content-wrapper">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="content-title" style="text-align:center;">Add New Student</h2>
+          <form action="/add" method="POST"  enctype="multipart/form-data >
+          	
+            <button name="1" value="<%= num %>" disabled class="btn btn-danger"><%= num %></button>
+
+           <button name="2" value="<%= room %>" disabled class="btn btn-danger">Room-<%= room %></button>
+
+
+          <input name="blockName" value="<%= num %>" type="hidden"></input>
+
+           <input name="roomNo" value="<%= room %>" type="hidden"></input>
+
+				  	<h5><label for="Name">Roll No</label></h5>
+				  	<input type="text" class="form-control" name="roll" placeholder="Roll No" required="on">
+				<br>
+				  	<h5><label for="name">Name</label></h5>
+				  	<input type="text" class="form-control" name="name" placeholder="Name" required="on">
+				<br>
+				  	<h5><label for="gender">Gender</label></h5>
+				<div class="form-group">
+				  	<select name="gender" class="form-control">
+				  		<option value="M">Male</option>
+				  		<option value="F">Female</option>
+				  	</select>
+				</div>
+				
+					<h5><label for="guardian">Guardian</label></h5>
+				  	<input type="text" class="form-control" name="guardian" placeholder="Guardian" required="on">
+					  <br>
+					  
+				  	     
+				<button type="submit" style="background-color:#F8BE12;color:white;" class="btn ">Submit</button>
+          </form>
+        </div>
+      </div>
+  </section>
+
+<%- include('partials/footer');-%>

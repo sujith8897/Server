@@ -1,0 +1,40 @@
+<%- include('partials/header');-%>
+
+	<section id="content-wrapper" class="container">
+      <div class="row" >
+      
+      <div class="col">
+            <h2><%= blockNum %></h2>
+            <table>
+                  <tr>
+                  <th>Room</th>
+                  <th>No of students</th>
+                  </tr>
+
+                  <% for(var i=1;i<=3;i++) {%>
+                  <% for(var j=1;j<=5;j++) { let cnt=0; %>
+                  <tr>
+                        <td><h5><a href="/Block/<%= blockNum[6] %>/<%= (i*100)+j %>"><%= (i*100)+j %></a></h5></td>
+                        <% for(var k=0;k<data.length;k++) {%>
+                            <%  if(data[k].roomNo===(i*100)+j){ cnt+=1;} %>
+                        <%}%>
+                        <td><%= cnt %>
+                              <% if(cnt===5){ %>
+                                    <button class="btn btn-sm btn-danger" disabled>FULL</button>
+                              <%}%>
+                       </td> 
+                  </tr>
+
+
+
+                  <% }}%>
+            </table>
+                  
+
+      </div>
+
+      </div>
+    </section>
+	
+
+<%- include('partials/footer');-%>

@@ -1,0 +1,42 @@
+<%- include('partials/header');-%>
+
+  <section id="content-wrapper">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="content-title" style="text-align:center;">Search Results</h2>
+
+          <% if(data.length==0) { %>
+
+          		<h4>No student with that Roll No. or Name</h4>
+          		<form action="/dashboard" method="GET">
+          			<button type="submit" class="btn btn-secondary">Go Back</button>
+          		</form>
+
+          <%  }  else {%>
+          <div style="text-align:center;">
+          <table>
+          	<tr>
+          		<th>Roll No.</th>
+          		<th>Name</th>
+          		<th>Room No.</th>
+          		<th>Guardian</th>
+          		
+          	</tr>
+
+          	<% for(var i=0;i<data.length;i++) { %>
+          		<tr>
+          			<td><a href="#"><%= data[i].roll %></a></td>
+          			<td><%= data[i].name %></td>
+          			<td><%= data[i].roomNo %></td>
+          			<td><%= data[i].guardian %></td>
+          			
+          		</tr>
+          	<%  } %>
+          </table>
+          </div>
+         <% }%>
+        </div>
+      </div>
+  </section>
+
+<%- include('partials/footer');-%>

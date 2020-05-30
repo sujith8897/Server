@@ -1,0 +1,39 @@
+
+<%- include('partials/header');-%>
+
+  <section id="content-wrapper" class="container">
+      <div class="row" >
+          <div class="col">
+
+          <h3 style="text-align:center;">Attendance for <%= date %></h3>
+              <table>
+                <tr>
+                  <th>Roll No.</th>
+                  <th>Name</th>
+                  <th>Room</th>
+                  <th>Guardian</th>
+
+                </tr>
+
+                <% for(var i=0;i<data[0].present.length;i++) { %>
+
+                <%  for(var j=0;j<info.length;j++){ %>
+                       <% if(info[j].roll===data[0].present[i]) {%>
+                        <tr>
+                            <td><a href="#"><%=info[j].roll%></a></td>
+                            <td><%=info[j].name%></td>
+                            <td><%=info[j].roomNo%></td>
+                            <td><%=info[j].guardian%></td>
+                        </tr>
+
+                <%  } }%>
+                <%  } %>
+              </table>
+              
+          </div>
+      </div>
+  </section>
+
+<%- include('partials/footer');-%>
+
+

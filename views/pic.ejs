@@ -1,0 +1,18 @@
+<%- include('partials/header');-%>
+
+
+<div class="jumbotron">
+    <h1 class="display-4"><center><b>Step-2</b></center></h1>
+    <p class="lead"><center>Upload your picture and you are succesfully saved.</center></p>
+    
+    
+  </div>
+
+
+<form action ="/img/<%=id%>" method="POST" enctype="multipart/form-data">
+    <input type="file" name="upload"  />
+    <input type="submit" value="Upload"/> 
+
+</form>
+
+<%- include('partials/footer');-%>
